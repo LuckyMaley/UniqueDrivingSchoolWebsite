@@ -1,0 +1,193 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Help.master.cs" Inherits="UniqueDrivingSchoolWebsite.Help.Help" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="Shortcut Icon" href="../Resources/UniqueDrivingSchool.jpg" type="image/x-icon" />
+    <link rel="stylesheet" href="../Scripts/bootswatch/bootswatch.less" />
+    <link rel="stylesheet" href="../Scripts/bootswatch/variables.less" />
+    <link rel="stylesheet" href="../Scripts/Bootstrap 3.4.1/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../Scripts/bootswatch/bootstrap.css" />
+    <link rel="stylesheet" href="../Styles/main.css" />
+    <title>Unique Driving School</title>
+    <link rel="Stylesheet" type="text/css" href="../Styles/slider.css" />
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.0/themes/smoothness/jquery-ui.css"/>
+    <script src="http://code.jquery.com/jquery-1.10.2.js" type="text/javascript"></script>
+    <script src="http://code.jquery.com/ui/1.11.0/jquery-ui.js" type="text/javascript"></script>
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server">
+    </asp:ContentPlaceHolder>
+    <script type="text/javascript" language="javascript">
+        $(document).ready(function () {
+            var pageName = window.location.pathname;
+            var newPageName = pageName;
+
+            if (pageName.indexOf('/') == 0) {
+                newPageName = pageName.substring(1, pageName.length);
+
+                $.each($('#navbar').find('li'), function () {
+                    var hrefVal = $(this).find('a').attr('href');
+
+                    if (hrefVal.indexOf(newPageName) >= 0) {
+                        $(this).addClass('active').siblings().removeClass('active');
+                    }
+
+                });
+            }
+        });
+    </script>
+    <style type="text/css">
+        .style1
+        {
+            height: 45px;
+        }
+    </style>
+
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div style="float: left; width: 100%; height: 75px;">
+    <div class="navbar navbar-default " role="navigation" style="background-color: #4D67A0; border-top-style: solid; border-bottom-color: #000000; border-top-width: 10px; border-top-color: #008080; width: 100%;">
+        <div >
+            <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" style=" padding: 0px; margin: 0px; background-color: transparent; width: 160px; height: 80px;" 
+                        href="../Default.aspx">
+                    <asp:Image CssClass="img-responsive" ID="ImageSite1" runat="server" 
+                        ImageAlign="Middle" Height="80" Width="160" 
+                        ImageUrl="~/Resources/UniqueDrivingSchool.jpg" />
+                        </a> 
+            </div>
+            <div class = "navbar-collapse collapse" 
+                
+                style="font-size: large; font-weight: bold; color: #FFFFFF; margin: 0px; background-color: #4D67A0;">
+                <ul class="nav navbar-nav navbar-right">
+            <li><a href="/Default.aspx">Home</a></li>
+            <li><a href="/Packages.aspx" >Packages</a></li>
+            <li><a href="/Contact.aspx" >Contact</a></li>
+            <li><a href="/About.aspx">About</a></li>
+            <li ><a href="Help.aspx">Help</a></li>
+            <li style="float: right">
+            <asp:LoginView ID="HeadLoginView1" runat="server" EnableViewState="false">
+                    <AnonymousTemplate>
+                         <a id="A1" href="../Account/Register.aspx">Sign Up</a>
+                    </AnonymousTemplate>
+                    <LoggedInTemplate>
+                    </LoggedInTemplate>
+                </asp:LoginView>
+            </li>
+            <li class="dropdown" style="float: right">
+                <asp:LoginView ID="HeadLoginView9" runat="server" EnableViewState="false">
+                    <AnonymousTemplate>
+                         <a href="~/Account/Login.aspx" ID="HeadLoginStatus" runat="server">Login</a> 
+                    </AnonymousTemplate>
+                    <LoggedInTemplate>
+                    <ul style="list-style-type: none; height: 100%;">
+                        <li class="dropdown">
+                        <a style="background-color: transparent; height: 100%;" data-toggle="dropdown">
+                            <asp:Image CssClass="img-circle" ID="Image7" runat="server" 
+                        ImageAlign="Middle" BorderColor="#CCCCCC" BorderStyle="Solid" Height="25" Width="30" 
+                        ImageUrl= "~/Resources/user.png"/>Welcome <span class="bold"><asp:LoginName ID="HeadLoginName" runat="server" /></span>!
+                             <b class="caret"></b></a>
+                             <ul id="Ul1" class="dropdown-menu" runat ="server">
+                             
+                             <li id="Li2" runat="server" style="width: 100%">
+                        <asp:LoginStatus ID="HeadLoginStatus6" runat="server" LogoutAction="Redirect" LogoutText="Log Out" LogoutPageUrl="~/"/>
+                       </li> </ul>
+                       </li>
+                   </ul>
+
+                    
+                    </LoggedInTemplate>
+                </asp:LoginView></li>
+            <li style="float: right" class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" 
+                    href="~/ViewCart.aspx">Cart: <%=Session["count"] %> <b class="caret"></b></a>
+            <ul class="dropdown-menu" style="color: #C0C0C0">
+           
+                        <li><asp:repeater id="rptr" runat="server">
+                        <ItemTemplate>
+                            
+                                    <a id="alinktosome2" runat="server" href="~/ViewCart.aspx">
+                                <div align="center" style="width: 100%; height: 50px; border-top-style: solid; border-bottom-style: solid; border-top-width: thin; border-bottom-width: thin; border-top-color: #C0C0C0; border-bottom-color: #C0C0C0;">
+                               <p align="center">Code <%#Eval("PackageCode") %> <br /> &nbsp; <%#Eval("PackageCount") %> Lessons 
+                               R <%#Eval("PackageCost") %></p>
+                                </div></a>
+                                
+                        </ItemTemplate>
+                    </asp:repeater></li>
+                    <li><p align="center" style="color: #333333"> <% if ((int)Session["count"] == 0) Response.Write("<asp:LinkButton runat='server' ID='dfds' PostBackUrl='~/ViewCartEmpty.aspx'>No Items in cart</asp:LinkButton>"); %>
+                    </p>
+                    </li>
+                 </ul>
+            </li>
+            
+           </ul> 
+            </div>
+        </div>
+  
+    </div>
+    </div>
+    
+  
+  <div class="top">
+           <img src="../Resources/212751248e6f6591846481281fe045dc.jpg" 
+               style="width: 100%; height: 160px; background-attachment: fixed;" />
+       </div>
+    
+    <div style="float: left; width: 250px; height: 520px; display: block; margin-top: 5px;">
+    <asp:panel runat="server" Width="240px" BorderColor="Black" BorderStyle="Solid" 
+            CssClass="img-rounded">
+           
+                    <p align="center" style="font-size: xx-large; border-width: thin; border-color: #C0C0C0; width: 100%;">
+                       <a style="text-align: center; width: 100%; text-decoration: none;">
+                         
+                            Help</a></p>
+                
+                    <p class="style1" style="border: thin solid #C0C0C0; width: 100%;">
+                        <a style="font-size: x-large; " href="~/Help/Help.aspx" runat="server" id="loginhelp">Login</a></p>  
+               
+                    <p class="style1" style="border: thin solid #C0C0C0; width: 100%;"><a runat="server" href ="~/Help/Help0a.aspx" style="font-size: x-large; " id="book">Sign Up</a></p>    
+                
+                    <p class="style1" style="border: thin solid #C0C0C0; width: 100%;">
+                        <a style="font-size: x-large; " runat="server" href="~/Help/Help5.aspx" id="time">Add to Cart</a></p>    
+              
+                    <p class="style1"style="border: thin solid #C0C0C0; width: 100%;" ><a style="font-size: x-large; " href="Help4.aspx">CheckOut</a></p>    
+                
+        </asp:panel></div>
+    <div style="float: left; width: 84%; display: block; height: 1100px; margin-top: 5px; margin-right:0px">
+        <asp:ContentPlaceHolder ID="MainContent" runat="server">
+        
+        </asp:ContentPlaceHolder>
+    </div>
+    <br />
+    
+        <div class="footer" style="margin-bottom: 0px; width: 100%;" align="center"><footer>
+            <div style="width: 100%;" align="center">
+            <p align="center">&copy;Compass Corporation: All Rights Reserved</p>
+                
+                <p align="center">
+                 <a href="../Default.aspx">Home</a>&middot; 
+                    <a href="../Packages.aspx">Packages</a>&middot; <a href="../About.aspx">About</a>&middot; <a href="../Contact.aspx">Contact</a>
+                </p><p align="center"><a href="#">Back to top</a></p>
+            </div> </footer>
+        </div>
+   
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous" type="text/javascript"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous" type="text/javascript"></script>
+    <script src="https://use.fontawesome.com/releases/v5.5.0/js/all.js" type="text/javascript"></script>
+    <script src="../Scripts/jssor.slider-27.5.0.min.js" type="text/javascript"></script>
+    <script src="../Scripts/Bootstrap 3.4.1/js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="../Scripts/Bootstrap 3.4.1/js/bootstrap.js" type="text/javascript"></script>
+    </form>
+</body>
+</html>
+
+

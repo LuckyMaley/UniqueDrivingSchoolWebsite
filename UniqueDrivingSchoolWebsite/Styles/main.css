@@ -1,0 +1,182 @@
+﻿body {
+  margin: 0;
+  font-family: "Lato", sans-serif;
+}
+
+.content
+{
+    margin-top: 140px;
+    height: 678px;
+    padding: 0px;
+}
+.content3
+{
+    height: 138px;
+    padding: 0px;
+}
+
+.menu
+{
+    background-color: #4D67A0;
+    overflow: hidden;
+    position: fixed;
+    z-index: 99;
+    width: 100%;
+    top: 0;
+    margin-left: 0px;
+    left: 0px;
+    float: left;
+    height:auto;
+}
+
+.menu1
+{
+    background-color: #4D67A0;
+    overflow: hidden;
+    position: fixed;
+    z-index: 99;
+    width: 100%;
+    top: 0;
+    margin-left: 0px;
+    left: 0px;
+    float: left;
+    height: auto;
+}
+
+.row
+{
+    background-color: #1481A5;
+}
+
+.header1 li {
+    border-style: none;
+    border-color: inherit;
+    border-width: medium;
+    list-style-type: none;
+    width: 199px;
+}
+
+.header1 ul{
+    list-style-type: none;
+    border:none;
+    display:block;
+}
+
+.header2 {
+  list-style-type: none;
+  padding: 0;
+  overflow: hidden;
+  background-color: #2C4271;
+  height: 42px;
+  margin-top: 0;
+  border-top: 1px solid #bbb; 
+  display:block;
+  margin-left: 0;
+  margin-right: 0;
+  margin-bottom: 0px;
+}
+
+li {
+  float: left;
+}
+
+li a
+{
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    }
+
+li a:hover:not(.active) {
+  background-color: #ccc;
+  list-style-type: none;
+  text-decoration: none;
+}
+
+.padding-x{padding:18px;}
+    
+
+.sidebar 
+{
+  margin-top: 16px;
+  margin-left: -5px;
+  padding: 0;
+  width: 200px;
+  background-color: #4D67A0;
+  position: fixed;
+  height: 100%;
+  overflow: auto;
+}
+
+.sidebar a 
+{
+    
+  display: block;
+  color: black;
+  padding: 16px;
+  text-decoration: none;
+}
+ 
+.sidebar a.active {
+  background-color: #6f91a1;
+  color: white;
+}
+
+.sidebar a:hover:not(.active) {
+  background-color: #555;
+  color: white;
+}
+
+div.content1 {
+  margin-left: 200px;
+  margin-top: -20px;
+  padding: 1px 16px;
+  height: 1000px;
+}
+
+.footer {
+  width: 100%;
+  border-top:30px solid #2C4271;
+  clear: both;
+  background-color: #4D67A0;
+  color: white;
+  text-align: center;
+}
+
+.car_div {
+	margin: 0 -10px;
+}
+
+.carousel1 {
+	cursor: default !important;
+}
+
+.carousel1 li {
+	margin: 0 10px;
+	list-style:none;
+	border:none;
+	float: left;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/* Create two columns that float next to eachother */
+.column {
+  float: left;
+  width: 50%;
+  margin-top: 6px;
+  padding: 20px;
+}
+
+/* Clear floats after the columns */
+.row1:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+

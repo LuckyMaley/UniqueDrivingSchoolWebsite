@@ -1,0 +1,258 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Site.master.cs" Inherits="Site" %>
+
+<script type ="text/C#" runat="server">
+    string dir = "";
+    System.Data.DataTable myCart = new System.Data.DataTable();
+    protected void Page_Load(object sender, EventArgs e)
+        {
+           
+            myCart = (System.Data.DataTable)Session["cart"];
+            Session["count"] = myCart.Rows.Count;
+            
+            Repeater rptrs = (Repeater)Page.Master.FindControl("rptr");
+            rptr.DataSource = myCart;
+            rptr.DataBind();
+         
+        
+            if (!IsPostBack)
+            {
+                if ((int)Session["count"] == 0)
+                {
+                    alinktosome.HRef = "~/ViewCartEmpty.aspx";
+                }
+                if (HttpContext.Current.User.Identity.Name != "")
+                {
+                    if (HttpContext.Current.User.IsInRole("Customer"))
+                    {
+                        UniqueDrivingSchoolWebsite.App_Data.DataSet1 DS2 = new UniqueDrivingSchoolWebsite.App_Data.DataSet1();
+                        UniqueDrivingSchoolWebsite.App_Data.DataSet1TableAdapters.CustomerTableAdapter bookingTA = new UniqueDrivingSchoolWebsite.App_Data.DataSet1TableAdapters.CustomerTableAdapter();
+                        UniqueDrivingSchoolWebsite.SqlDBConnection sqlcon = new UniqueDrivingSchoolWebsite.SqlDBConnection();
+                        System.Data.DataTable dataT = sqlcon.QueryCusTable(HttpContext.Current.User.Identity.Name.ToString());
+                        if (dataT.Rows[0]["custpic"] != DBNull.Value)
+                        {
+                            byte[] imageData = (byte[])dataT.Rows[0]["custpic"];
+                            string img = Convert.ToBase64String(imageData, 0, imageData.Length);
+                            Image imagesomet = (Image)HeadLoginView.FindControl("Image4");
+                            imagesomet.ImageUrl = "data:image/png;base64," + img;
+                        }
+                        dir = "/Restricted Access/Customer/CusAccountSettings.aspx";
+                        HyperLink curr = (HyperLink)HeadLoginView.FindControl("LinkTo");
+
+                        if (HttpContext.Current.Request.FilePath == dir)
+                        {
+                            curr.NavigateUrl = dir;
+                        }
+                        
+                    }
+                    else if (HttpContext.Current.User.IsInRole("Instructor"))
+                    {
+                        UniqueDrivingSchoolWebsite.App_Data.DataSet1 DS2 = new UniqueDrivingSchoolWebsite.App_Data.DataSet1();
+                        UniqueDrivingSchoolWebsite.App_Data.DataSet1TableAdapters.InstructorTableAdapter bookingTA = new UniqueDrivingSchoolWebsite.App_Data.DataSet1TableAdapters.InstructorTableAdapter();
+                        UniqueDrivingSchoolWebsite.SqlDBConnection sqlcon = new UniqueDrivingSchoolWebsite.SqlDBConnection();
+                        System.Data.DataTable dataT = sqlcon.QueryInsTable(HttpContext.Current.User.Identity.Name.ToString());
+                        if (dataT.Rows[0]["Instructpic"] != DBNull.Value)
+                        {
+                            byte[] imageData = (byte[])dataT.Rows[0]["Instructpic"];
+                            string img = Convert.ToBase64String(imageData, 0, imageData.Length);
+                            Image imagesomet = (Image)HeadLoginView.FindControl("Image4");
+                            imagesomet.ImageUrl = "data:image/png;base64," + img;
+                        }
+                        dir = "/Restricted Access/Instructor/InsAccountSettings.aspx";
+                        HyperLink curr = (HyperLink)HeadLoginView.FindControl("LinkTo");
+
+                        if (HttpContext.Current.Request.FilePath == dir)
+                        {
+                            curr.NavigateUrl = dir;
+                        }
+                        
+                    }
+                    else
+                    {
+                        UniqueDrivingSchoolWebsite.App_Data.DataSet1 DS2 = new UniqueDrivingSchoolWebsite.App_Data.DataSet1();
+                        UniqueDrivingSchoolWebsite.App_Data.DataSet1TableAdapters.ManagerTableAdapter bookingTA = new UniqueDrivingSchoolWebsite.App_Data.DataSet1TableAdapters.ManagerTableAdapter();
+                        UniqueDrivingSchoolWebsite.SqlDBConnection sqlcon = new UniqueDrivingSchoolWebsite.SqlDBConnection();
+                        System.Data.DataTable dataT = sqlcon.QueryManTable(HttpContext.Current.User.Identity.Name.ToString());
+                        if (dataT.Rows[0]["Managerpic"] != DBNull.Value)
+                        {
+
+                            byte[] imageData = (byte[])dataT.Rows[0]["Managerpic"];
+                            string img = Convert.ToBase64String(imageData, 0, imageData.Length);
+                            Image imagesomet = (Image)HeadLoginView.FindControl("Image4");
+                            imagesomet.ImageUrl = "data:image/png;base64," + img;
+                        }
+                        dir = "/Restricted Access/Manager/ManAccountSettings.aspx";
+                        HyperLink curr = (HyperLink)HeadLoginView.FindControl("LinkTo");
+
+                        if (HttpContext.Current.Request.FilePath == dir)
+                        {
+                            curr.NavigateUrl = dir;
+                        }
+                        
+                    }
+                }
+            }
+        }
+</script>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="Shortcut Icon" href="Resources/UniqueDrivingSchool.jpg" type="image/x-icon" />
+    <link rel="stylesheet" href="Scripts/bootswatch/bootswatch.less" />
+    <link rel="stylesheet" href="Scripts/bootswatch/variables.less" />
+    <link rel="stylesheet" href="Scripts/Bootstrap 3.4.1/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="Scripts/bootswatch/bootstrap.css" />
+    <link rel="stylesheet" href="Styles/main.css" />
+    <title>Unique Driving School</title>
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.0/themes/smoothness/jquery-ui.css"/>
+    <script src="http://code.jquery.com/jquery-1.10.2.js" type="text/javascript"></script>
+    <script src="http://code.jquery.com/ui/1.11.0/jquery-ui.js" type="text/javascript"></script>
+    <link rel="Stylesheet" type="text/css" href="Styles/slider.css" />
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server">
+    </asp:ContentPlaceHolder>
+    <script type="text/javascript" language="javascript">
+        $(document).ready(function () {
+            var pageName = window.location.pathname;
+            var newPageName = pageName;
+ 
+            if (pageName.indexOf('/') == 0) {
+                newPageName = pageName.substring(1, pageName.length);
+ 
+                $.each($('#navbar').find('li'), function () {
+                    var hrefVal = $(this).find('a').attr('href');
+ 
+                    if (hrefVal.indexOf(newPageName) >= 0) {
+                        $(this).addClass('active').siblings().removeClass('active');
+                    }
+ 
+                });
+            }
+        });
+    </script>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div style="width: 100%">
+    <div style="float: left; width: 100%; height: 0px;">
+    <div class="navbar navbar-default " role="navigation" style="border-top: 10px solid #008080; background-color: #4D67A0; border-bottom-color: #000000; height: 91px; width:100%; margin:0px; position: fixed;">
+        <div >
+            <div class="navbar-header" style="background-color: #4D67A0; display: block;">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" style=" padding: 0px; margin: 0px; background-color: transparent; width: 160px; height: 80px;" 
+                        href="Default.aspx">
+                    <asp:Image CssClass="img-responsive" ID="Image2" runat="server" 
+                        ImageAlign="Middle" Height="80" Width="160" 
+                        ImageUrl="~/Resources/UniqueDrivingSchool.jpg" />
+                        </a> 
+            </div>
+            <div class = "navbar-collapse collapse" 
+                
+                style="font-size: large; font-weight: bold; color: #FFFFFF; margin: 0px; background-color: #4D67A0;">
+                <ul class="nav navbar-nav navbar-right">
+            <li><a  href="/Default.aspx">Home</a></li>
+            <li><a href="/Packages.aspx" >Packages</a></li>
+            <li><a href="/Contact.aspx" >Contact</a></li>
+            <li><a href="/About.aspx">About</a></li>
+            <li ><a href="Help/Help.aspx">Help</a></li>
+            <li>     
+            </li>
+            <li style="float: right">
+            <asp:LoginView ID="HeadLoginView1" runat="server" EnableViewState="false">
+                    <AnonymousTemplate>
+                         <a href="Account/Register.aspx" id="A1">Sign Up</a>
+                    </AnonymousTemplate>
+                    <LoggedInTemplate>
+                    </LoggedInTemplate>
+                </asp:LoginView>
+            </li>
+            <li class="dropdown" style="float: right">
+                <asp:LoginView ID="HeadLoginView" runat="server" EnableViewState="false">
+                    <AnonymousTemplate>
+                         <a href="~/Account/Login.aspx" ID="HeadLoginStatus" runat="server">Login</a> 
+                    </AnonymousTemplate>
+                    <LoggedInTemplate>
+                    <ul style="list-style-type: none; height: 100%;">
+                        <li class="dropdown">
+                        <a style="background-color: transparent; height: 100%;" data-toggle="dropdown">
+                            <asp:Image CssClass="img-circle" ID="Image4" runat="server" 
+                        ImageAlign="Middle" BorderColor="#CCCCCC" BorderStyle="Solid" Height="25" Width="30" 
+                        ImageUrl= "~/Resources/user.png"/>Welcome <span class="bold"><asp:LoginName ID="HeadLoginName" runat="server" /></span>!
+                             <b class="caret"></b></a>
+                             <ul class="dropdown-menu">
+                             <li style="width: 100%"><a href="<%=dir %>">Account Settings</a></li>
+                             <li style="width: 100%">
+                        <asp:LoginStatus ID="HeadLoginStatus1" runat="server" LogoutAction="Redirect" LogoutText="Log Out" LogoutPageUrl="~/"/>
+                       </li> </ul>
+                       </li>
+                   </ul>
+
+                    
+                    </LoggedInTemplate>
+                </asp:LoginView></li>
+            <li style="float: right" class="dropdown">
+            <a id="alinktosome" runat="server" class="dropdown-toggle" data-toggle="dropdown" 
+                    href="~/ViewCart.aspx">Cart: <%=Session["count"] %> <b class="caret"></b></a>
+            <ul class="dropdown-menu" style="color: #C0C0C0">
+           
+                        <li><asp:repeater id="rptr" runat="server">
+                        <ItemTemplate>
+                            
+                                    <a id="alinktosome2" runat="server" href="~/ViewCart.aspx">
+                                <div align="center" style="width: 100%; height: 50px; border-top-style: solid; border-bottom-style: solid; border-top-width: thin; border-bottom-width: thin; border-top-color: #C0C0C0; border-bottom-color: #C0C0C0;">
+                               <p align="center">Code <%#Eval("PackageCode") %> <br /> &nbsp; <%#Eval("PackageCount") %> Lessons 
+                               R <%#Eval("PackageCost") %></p>
+                                </div></a>
+                                
+                        </ItemTemplate>
+                    </asp:repeater></li>
+                    <li><p align="center" style="color: #333333"> <% if ((int)Session["count"] == 0) Response.Write("<asp:LinkButton runat='server' ID='dfds' PostBackUrl='~/ViewCartEmpty.aspx'>No Items in cart</asp:LinkButton>"); %>
+                    </p>
+                    </li>
+                 </ul>            
+            </li>
+                   
+           </ul> 
+            
+            </div>
+        </div>
+  
+    </div>
+    </div>
+    <div  
+        style="height: auto; float: left; width: 100%; margin-top: 68px;" >
+        <asp:ContentPlaceHolder ID="MainContent" runat="server">
+        </asp:ContentPlaceHolder>
+    </div>
+    
+    <br />
+    
+        <div class="footer" style="margin-bottom: 0px; width:100%" align="center"><footer>
+            <div style="width: 100%" align="center" >
+            <p align="center">&copy;Compass Corporation: All Rights Reserved</p>
+                
+     
+                <p align="center">
+                 <a href="Default.aspx">Home</a>&middot; <a href="Packages.aspx">Packages</a>&middot; <a href="About.aspx">About</a>&middot; <a href="Contact.aspx">Contact</a>
+                </p><p align="center"><a href="#">Back to top</a></p>
+            </div>  
+        </footer>
+        </div>
+    
+    </div>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous" type="text/javascript"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous" type="text/javascript"></script>
+    <script src="https://use.fontawesome.com/releases/v5.5.0/js/all.js" type="text/javascript"></script>
+    <script src="Scripts/jssor.slider-27.5.0.min.js" type="text/javascript"></script>
+    <script src="Scripts/Bootstrap 3.4.1/js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="Scripts/Bootstrap 3.4.1/js/bootstrap.js" type="text/javascript"></script>
+    
+    </form>
+</body>
+</html>

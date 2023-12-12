@@ -1,0 +1,671 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{BD3DFE74-25E1-4D1A-9D1E-D6A53EFA0336}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>UniqueDrivingSchoolWebsite</RootNamespace>
+    <AssemblyName>UniqueDrivingSchoolWebsite</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <UseIISExpress>false</UseIISExpress>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="About.aspx" />
+    <Content Include="Account\ChangePassword.aspx" />
+    <Content Include="Account\ChangePasswordSuccess.aspx" />
+    <Content Include="Account\ForgotPassword.aspx" />
+    <Content Include="Account\Login.aspx" />
+    <Content Include="Account\Register.aspx" />
+    <Content Include="Contact.aspx" />
+    <Content Include="Default.aspx" />
+    <Content Include="Help\Help.aspx" />
+    <Content Include="Help\Help0a.aspx" />
+    <Content Include="Help\Help1a.aspx" />
+    <Content Include="Resources\Help\CustomerSchule.png" />
+    <Content Include="Resources\Help\EditCustomerAccount.png" />
+    <Content Include="Resources\Help\EditInstrDetails.png" />
+    <Content Include="Resources\Help\InstrDash.png" />
+    <Content Include="Resources\Help\InstrTimetable.png" />
+    <Content Include="Resources\Help\ManagerReports.png" />
+    <Content Include="Resources\Help\ManagerSchedules.png" />
+    <Content Include="Resources\Help\printTimetable.png" />
+    <Content Include="Resources\learners.jpg" />
+    <Content Include="Restricted Access\Customer\CusHelp0.aspx" />
+    <Content Include="Restricted Access\Customer\CusHelp1.aspx" />
+    <Content Include="Restricted Access\Customer\CusHelp2.aspx" />
+    <Content Include="Restricted Access\Instructor\InsHelp0.aspx" />
+    <Content Include="Restricted Access\Instructor\InsHelp1.aspx" />
+    <Content Include="Restricted Access\Manager\BookedCustomers.aspx" />
+    <Content Include="Restricted Access\Manager\Bookings.aspx" />
+    <Content Include="Restricted Access\Manager\Help1.aspx" />
+    <Content Include="Restricted Access\Manager\Help2.aspx" />
+    <Content Include="Restricted Access\Manager\Help3.aspx" />
+    <Content Include="Help\Help4.aspx" />
+    <Content Include="Help\Help5.aspx" />
+    <Content Include="Packages.aspx" />
+    <Content Include="Help\Help.Master" />
+    <None Include="Resources\1-883x675.jpg" />
+    <None Include="Resources\about-us-banner-design-png.png" />
+    <None Include="Resources\Calendar_Green.png" />
+    <None Include="Resources\kisspng-graphic-designer-material-requirements-planning-au-register-button-5ac47b76620df4.5531153415228261024016.jpg" />
+    <None Include="Resources\register.png" />
+    <None Include="Resources\Register_Now_Button.jpg" />
+    <None Include="Resources\UniqueDrivingSchool.jpg" />
+    <None Include="Resources\user.png" />
+    <None Include="Resources\slides\p1.jpg" />
+    <None Include="Resources\slides\p2.jpg" />
+    <None Include="Resources\slides\p3.jpg" />
+    <None Include="Resources\slides\p4.jpg" />
+    <None Include="Resources\slides\p6.jpg" />
+    <None Include="Resources\slides\p7.jpg" />
+    <None Include="Resources\packages\1.jpeg" />
+    <None Include="Resources\packages\2.jpeg" />
+    <None Include="Resources\packages\3.jpeg" />
+    <None Include="Resources\packages\4.jpeg" />
+    <None Include="Resources\packages\5.jpeg" />
+    <Content Include="PackageView.aspx" />
+    <Content Include="Resources\212751248e6f6591846481281fe045dc.jpg" />
+    <Content Include="Resources\art1.jpg" />
+    <Content Include="Resources\blue-wallpaper-19.jpg" />
+    <Content Include="Resources\Capture.PNG" />
+    <Content Include="Resources\Capture2.PNG" />
+    <Content Include="Resources\car-512.png" />
+    <Content Include="Resources\code08.PNG" />
+    <Content Include="Resources\code10.PNG" />
+    <Content Include="Resources\contact.png" />
+    <Content Include="Resources\Customers2.png" />
+    <Content Include="Resources\GettyImages-973212846-5b27e2d43418c60037c1dba0.jpg" />
+    <Content Include="Resources\help.png" />
+    <Content Include="Resources\Help\AccessToCart.png" />
+    <Content Include="Resources\Help\addPrice.png" />
+    <Content Include="Resources\Help\AddToCart.png" />
+    <Content Include="Resources\Help\DeletPackage.png" />
+    <Content Include="Resources\Help\Login.png" />
+    <Content Include="Resources\Help\PriceUdate.png" />
+    <Content Include="Resources\Help\Screenshot %2836%29.png" />
+    <Content Include="Resources\Help\Screenshot %2837%29.png" />
+    <Content Include="Resources\Help\sign-up.png" />
+    <Content Include="Resources\home-icon-blue-png.png" />
+    <Content Include="Resources\Home.png" />
+    <Content Include="Resources\images.png" />
+    <Content Include="Resources\imagesd.png" />
+    <Content Include="Resources\Information_icon.svg.png" />
+    <Content Include="Resources\instructor.png" />
+    <Content Include="Resources\Manager1.png" />
+    <Content Include="Resources\motor-driving-school-250x250.jpg" />
+    <Content Include="Resources\noImage.png" />
+    <Content Include="Resources\qkEGfH.jpg" />
+    <Content Include="Resources\Report.png" />
+    <Content Include="Resources\Schedule.png" />
+    <Content Include="Resources\seo-56-512.png" />
+    <Content Include="Resources\service_fees_plan_charge-512.png" />
+    <Content Include="Resources\shopping-cart.jpg" />
+    <Content Include="Resources\timetable.png" />
+    <Content Include="Resources\view-more.png" />
+    <Content Include="Resources\_username_login_1172579.png" />
+    <Content Include="Restricted Access\Customer\CheckOut.aspx" />
+    <Content Include="Restricted Access\Customer\Booking.aspx" />
+    <Content Include="Restricted Access\Customer\CusAccountSettings.aspx" />
+    <Content Include="Restricted Access\Customer\CusDashboard.aspx" />
+    <Content Include="Restricted Access\Customer\CusTimeTable.aspx" />
+    <Content Include="Restricted Access\Instructor\InsAccountSettings.aspx" />
+    <Content Include="Restricted Access\Instructor\InsDashBoard.aspx" />
+    <Content Include="Restricted Access\Instructor\InsTimeTable.aspx" />
+    <Content Include="Restricted Access\Manager\Help4.aspx" />
+    <Content Include="Restricted Access\Manager\ManHelp0.aspx" />
+    <Content Include="Restricted Access\Manager\Schedules.aspx" />
+    <Content Include="Restricted Access\Manager\ManAccountSettings.aspx" />
+    <Content Include="Restricted Access\Manager\ManDashBoard.aspx" />
+    <Content Include="Restricted Access\Manager\PackagesPrices.aspx" />
+    <Content Include="Restricted Access\Manager\Reports.aspx" />
+    <Content Include="Restricted Access\Customer\NonPayment.aspx" />
+    <Content Include="Restricted Access\Customer\Receipt.aspx" />
+    <Content Include="Scripts\Bootstrap 3.4.1\css\bootstrap-theme.css" />
+    <Content Include="Scripts\Bootstrap 3.4.1\css\bootstrap-theme.min.css" />
+    <Content Include="Scripts\Bootstrap 3.4.1\css\bootstrap.css" />
+    <Content Include="Scripts\Bootstrap 3.4.1\css\bootstrap.min.css" />
+    <Content Include="Scripts\Bootstrap 3.4.1\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Scripts\Bootstrap 3.4.1\js\bootstrap.js" />
+    <Content Include="Scripts\Bootstrap 3.4.1\js\bootstrap.min.js" />
+    <Content Include="Scripts\Bootstrap 3.4.1\js\npm.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\bootswatch\bootstrap.css" />
+    <Content Include="Scripts\bootswatch\bootstrap.min.css" />
+    <Content Include="Scripts\html5shiv.min.js" />
+    <Content Include="Scripts\jquery-1.4.1-vsdoc.js" />
+    <Content Include="Scripts\jquery-1.4.1.js" />
+    <Content Include="Scripts\jquery-1.4.1.min.js" />
+    <Content Include="Scripts\jquery.min.js" />
+    <Content Include="Scripts\jssor.slider-27.5.0.min.js" />
+    <Content Include="Scripts\js\jquery-3.3.1.min.js" />
+    <Content Include="Styles\bootstrap.css" />
+    <Content Include="Styles\Help.css" />
+    <Content Include="Styles\packages.css" />
+    <Content Include="Styles\main.css" />
+    <Content Include="Global.asax" />
+    <Content Include="Styles\slider.css" />
+    <Content Include="Restricted Access\Customer\Site1.Master" />
+    <Content Include="Restricted Access\Manager\Site3.Master" />
+    <Content Include="Restricted Access\Instructor\Site2.Master" />
+    <Content Include="Restricted Access\Customer\CusHelp.Master" />
+    <Content Include="Restricted Access\Instructor\InsHelp.Master" />
+    <Content Include="Restricted Access\Manager\ManHelp.Master" />
+    <None Include="Scripts\Bootstrap 3.4.1\css\bootstrap-theme.css.map" />
+    <None Include="Scripts\Bootstrap 3.4.1\css\bootstrap-theme.min.css.map" />
+    <None Include="Scripts\Bootstrap 3.4.1\css\bootstrap.css.map" />
+    <None Include="Scripts\Bootstrap 3.4.1\css\bootstrap.min.css.map" />
+    <None Include="Scripts\Bootstrap 3.4.1\fonts\glyphicons-halflings-regular.eot" />
+    <None Include="Scripts\Bootstrap 3.4.1\fonts\glyphicons-halflings-regular.ttf" />
+    <None Include="Scripts\Bootstrap 3.4.1\fonts\glyphicons-halflings-regular.woff" />
+    <None Include="Scripts\Bootstrap 3.4.1\fonts\glyphicons-halflings-regular.woff2" />
+    <None Include="Scripts\bootswatch\bootswatch.less" />
+    <None Include="Scripts\bootswatch\variables.less" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="About.aspx.cs">
+      <DependentUpon>About.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="About.aspx.designer.cs">
+      <DependentUpon>About.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\ChangePassword.aspx.cs">
+      <DependentUpon>ChangePassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\ChangePassword.aspx.designer.cs">
+      <DependentUpon>ChangePassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\ChangePasswordSuccess.aspx.cs">
+      <DependentUpon>ChangePasswordSuccess.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\ChangePasswordSuccess.aspx.designer.cs">
+      <DependentUpon>ChangePasswordSuccess.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\ForgotPassword.aspx.cs">
+      <DependentUpon>ForgotPassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\ForgotPassword.aspx.designer.cs">
+      <DependentUpon>ForgotPassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\Register.aspx.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\Register.aspx.designer.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App_Data\DataSet1.cs">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="App_Data\DataSet11.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Cart.cs" />
+    <Compile Include="Contact.aspx.cs">
+      <DependentUpon>Contact.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Contact.aspx.designer.cs">
+      <DependentUpon>Contact.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Help\Help.aspx.cs">
+      <DependentUpon>Help.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Help\Help.aspx.designer.cs">
+      <DependentUpon>Help.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Help\Help.Master.cs">
+      <DependentUpon>Help.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Help\Help.Master.designer.cs">
+      <DependentUpon>Help.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Help\Help0a.aspx.cs">
+      <DependentUpon>Help0a.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Help\Help0a.aspx.designer.cs">
+      <DependentUpon>Help0a.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Help\Help1a.aspx.cs">
+      <DependentUpon>Help1a.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Help\Help1a.aspx.designer.cs">
+      <DependentUpon>Help1a.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Restricted Access\Customer\CusHelp0.aspx.cs">
+      <DependentUpon>CusHelp0.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Restricted Access\Customer\CusHelp0.aspx.designer.cs">
+      <DependentUpon>CusHelp0.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Restricted Access\Customer\CusHelp1.aspx.cs">
+      <DependentUpon>CusHelp1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Restricted Access\Customer\CusHelp1.aspx.designer.cs">
+      <DependentUpon>CusHelp1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Restricted Access\Customer\CusHelp2.aspx.cs">
+      <DependentUpon>CusHelp2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Restricted Access\Customer\CusHelp2.aspx.designer.cs">
+      <DependentUpon>CusHelp2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Restricted Access\Instructor\InsHelp0.aspx.cs">
+      <DependentUpon>InsHelp0.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Restricted Access\Instructor\InsHelp0.aspx.designer.cs">
+      <DependentUpon>InsHelp0.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Restricted Access\Instructor\InsHelp1.aspx.cs">
+      <DependentUpon>InsHelp1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Restricted Access\Instructor\InsHelp1.aspx.designer.cs">
+      <DependentUpon>InsHelp1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Restricted Access\Manager\BookedCustomers.aspx.cs">
+      <DependentUpon>BookedCustomers.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Restricted Access\Manager\BookedCustomers.aspx.designer.cs">
+      <DependentUpon>BookedCustomers.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Restricted Access\Manager\Bookings.aspx.cs">
+      <DependentUpon>Bookings.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Restricted Access\Manager\Bookings.aspx.designer.cs">
+      <DependentUpon>Bookings.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Restricted Access\Manager\Help1.aspx.cs">
+      <DependentUpon>Help1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Restricted Access\Manager\Help1.aspx.designer.cs">
+      <DependentUpon>Help1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Restricted Access\Manager\Help2.aspx.cs">
+      <DependentUpon>Help2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Restricted Access\Manager\Help2.aspx.designer.cs">
+      <DependentUpon>Help2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Restricted Access\Manager\Help3.aspx.cs">
+      <DependentUpon>Help3.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Restricted Access\Manager\Help3.aspx.designer.cs">
+      <DependentUpon>Help3.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Help\Help4.aspx.cs">
+      <DependentUpon>Help4.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Help\Help4.aspx.designer.cs">
+      <DependentUpon>Help4.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Help\Help5.aspx.cs">
+      <DependentUpon>Help5.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Help\Help5.aspx.designer.cs">
+      <DependentUpon>Help5.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Packages.aspx.cs">
+      <DependentUpon>Packages.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Packages.aspx.designer.cs">
+      <DependentUpon>Packages.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PackageView.aspx.cs">
+      <DependentUpon>PackageView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PackageView.aspx.designer.cs">
+      <DependentUpon>PackageView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Restricted Access\Customer\CheckOut.aspx.cs">
+      <DependentUpon>CheckOut.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Restricted Access\Customer\CheckOut.aspx.designer.cs">
+      <DependentUpon>CheckOut.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Restricted Access\Customer\Booking.aspx.cs">
+      <DependentUpon>Booking.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Restricted Access\Customer\Booking.aspx.designer.cs">
+      <DependentUpon>Booking.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Restricted Access\Customer\CusAccountSettings.aspx.cs">
+      <DependentUpon>CusAccountSettings.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Restricted Access\Customer\CusAccountSettings.aspx.designer.cs">
+      <DependentUpon>CusAccountSettings.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Restricted Access\Customer\CusDashboard.aspx.cs">
+      <DependentUpon>CusDashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Restricted Access\Customer\CusDashboard.aspx.designer.cs">
+      <DependentUpon>CusDashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Restricted Access\Customer\CusTimeTable.aspx.cs">
+      <DependentUpon>CusTimeTable.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Restricted Access\Customer\CusTimeTable.aspx.designer.cs">
+      <DependentUpon>CusTimeTable.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Restricted Access\Customer\CusHelp.Master.cs">
+      <DependentUpon>CusHelp.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Restricted Access\Customer\CusHelp.Master.designer.cs">
+      <DependentUpon>CusHelp.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Restricted Access\Instructor\InsHelp.Master.cs">
+      <DependentUpon>InsHelp.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Restricted Access\Instructor\InsHelp.Master.designer.cs">
+      <DependentUpon>InsHelp.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Restricted Access\Instructor\InsAccountSettings.aspx.cs">
+      <DependentUpon>InsAccountSettings.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Restricted Access\Instructor\InsAccountSettings.aspx.designer.cs">
+      <DependentUpon>InsAccountSettings.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Restricted Access\Instructor\InsDashBoard.aspx.cs">
+      <DependentUpon>InsDashBoard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Restricted Access\Instructor\InsDashBoard.aspx.designer.cs">
+      <DependentUpon>InsDashBoard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Restricted Access\Instructor\InsTimeTable.aspx.cs">
+      <DependentUpon>InsTimeTable.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Restricted Access\Instructor\InsTimeTable.aspx.designer.cs">
+      <DependentUpon>InsTimeTable.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Restricted Access\Instructor\Site2.Master.cs">
+      <DependentUpon>Site2.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Restricted Access\Manager\Help4.aspx.cs">
+      <DependentUpon>Help4.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Restricted Access\Manager\Help4.aspx.designer.cs">
+      <DependentUpon>Help4.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Restricted Access\Manager\ManHelp.Master.cs">
+      <DependentUpon>ManHelp.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Restricted Access\Manager\ManHelp.Master.designer.cs">
+      <DependentUpon>ManHelp.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Restricted Access\Manager\ManHelp0.aspx.cs">
+      <DependentUpon>ManHelp0.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Restricted Access\Manager\ManHelp0.aspx.designer.cs">
+      <DependentUpon>ManHelp0.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Restricted Access\Manager\Schedules.aspx.cs">
+      <DependentUpon>Schedules.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Restricted Access\Manager\Schedules.aspx.designer.cs">
+      <DependentUpon>Schedules.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Restricted Access\Manager\ManAccountSettings.aspx.cs">
+      <DependentUpon>ManAccountSettings.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Restricted Access\Manager\ManAccountSettings.aspx.designer.cs">
+      <DependentUpon>ManAccountSettings.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Restricted Access\Customer\Site1.Master.cs">
+      <DependentUpon>Site1.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Restricted Access\Customer\Site1.Master.designer.cs">
+      <DependentUpon>Site1.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Restricted Access\Manager\ManDashBoard.aspx.cs">
+      <DependentUpon>ManDashBoard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Restricted Access\Manager\ManDashBoard.aspx.designer.cs">
+      <DependentUpon>ManDashBoard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Restricted Access\Manager\PackagesPrices.aspx.cs">
+      <DependentUpon>PackagesPrices.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Restricted Access\Manager\PackagesPrices.aspx.designer.cs">
+      <DependentUpon>PackagesPrices.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Restricted Access\Manager\Reports.aspx.cs">
+      <DependentUpon>Reports.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Restricted Access\Manager\Reports.aspx.designer.cs">
+      <DependentUpon>Reports.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Restricted Access\Manager\Site3.Master.cs">
+      <DependentUpon>Site3.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Restricted Access\Customer\NonPayment.aspx.cs">
+      <DependentUpon>NonPayment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Restricted Access\Customer\NonPayment.aspx.designer.cs">
+      <DependentUpon>NonPayment.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Restricted Access\Customer\Receipt.aspx.cs">
+      <DependentUpon>Receipt.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Restricted Access\Customer\Receipt.aspx.designer.cs">
+      <DependentUpon>Receipt.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Site.master.cs">
+      <DependentUpon>Site.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SqlDBConnection.cs" />
+    <Compile Include="ViewCart.aspx.cs">
+      <DependentUpon>ViewCart.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewCart.aspx.designer.cs">
+      <DependentUpon>ViewCart.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewCartEmpty.aspx.cs">
+      <DependentUpon>ViewCartEmpty.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewCartEmpty.aspx.designer.cs">
+      <DependentUpon>ViewCartEmpty.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Restricted Access\Manager\Site3.Master.resx">
+      <DependentUpon>Site3.Master.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Site.master" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Styles\Contact.css" />
+    <Content Include="ViewCart.aspx" />
+    <Content Include="ViewCartEmpty.aspx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Account\Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App_Data\DataSet1.xsc">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="App_Data\DataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet11.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="App_Data\DataSet1.xss">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup />
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>61884</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

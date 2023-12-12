@@ -1,4 +1,4 @@
-This is the Website based on the Front-End System used by Customers, Admins, and Managers to book and manage bookings of driving lessons. The system is built on the Asp .net vb.net programming language.
+This is the Website based on the Front-End System used by Customers, Admins, and Managers to book and manage bookings of driving lessons. The system is built on the Asp .net C# programming language.
 
 Business processing	
 The business processing of the website is aligned with that of the front-end system, as all the information that it uses is from a central database that is also used by the front-end system. The website reflects the Front-end system in some sense.

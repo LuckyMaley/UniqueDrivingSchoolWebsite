@@ -1,3 +1,5 @@
+# Unique Driving School Website
+
 This is the Website based on the Front-End System used by Customers, Admins, and Managers to book and manage bookings of driving lessons. The system is built on the Asp .net C# programming language.
 
 Business processing	
@@ -19,4 +21,8 @@ When it comes to security we successfully implemented it. There are 3 ways to re
 Business Intelligence Reports
 	
 The website implemented some of the reports which include a mixture of power bi dashboards and crystal reports.
+
+# Guidelines
+
+![Static Badge](https://img.shields.io/badge/Visual%20Studio-2015-green) ![Static Badge](https://img.shields.io/badge/.Net%20Framework-4.5.2-blue)
 

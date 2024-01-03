@@ -24,5 +24,5 @@ The website implemented some of the reports which include a mixture of power bi 
 
 # Guidelines
 
-![Static Badge](https://img.shields.io/badge/Visual%20Studio-2015-green) ![Static Badge](https://img.shields.io/badge/.Net%20Framework-4.5.2-blue)
+![Static Badge](https://img.shields.io/badge/Visual%20Studio-2010%20or%20later-green) ![Static Badge](https://img.shields.io/badge/.Net%20Framework-4.5.2-blue)
 

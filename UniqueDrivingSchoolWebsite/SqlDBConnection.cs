@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Data;
 using System.Data.SqlClient;
+using System.Configuration;
 
 namespace UniqueDrivingSchoolWebsite
 {
@@ -18,7 +19,7 @@ namespace UniqueDrivingSchoolWebsite
 
         public SqlDBConnection() 
         {
-            string ConString = "Server= 143.128.146.30\\ist3; Database=ist3bb;User ID=ist3bb;Password=d6t22g";
+            string ConString = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
             conn = new SqlConnection(ConString);
                     
         }

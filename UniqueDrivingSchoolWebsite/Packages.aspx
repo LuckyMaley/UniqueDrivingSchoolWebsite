@@ -23,7 +23,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
 <div class="top">
-           <img src="Resources/212751248e6f6591846481281fe045dc.jpg" style="width: 100%; height: 160px" />
+           <img src="Resources/212751248e6f6591846481281fe045dc.jpg" alt="" style="width: 100%; height: 160px" />
             <h1 align="center">Packages</h1>
        </div>
 <div align="center" class="container">

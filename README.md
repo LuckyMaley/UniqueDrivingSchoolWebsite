@@ -2,29 +2,69 @@
 
 This is the Website based on the Front-End System used by Customers, Admins, and Managers to book and manage bookings of driving lessons. The system is built on the Asp .net C# programming language.
 
-Business processing	
+**Business processing**	
 
 The business processing of the website is aligned with that of the front-end system, as all the information that it uses is from a central database that is also used by the front-end system. The website reflects the Front-end system in some sense.
 
 
 
-Usability	
+**Usability**	
 
 The interface was made in such a way that the most important tasks that the user (Customer, Instructor, Admin) may want to perform are easy to access, understand, and use.  A help sub-system was successfully integrated. The user interface was made to conform to most of user interface design standards set by other large companies therefore the system almost behave like any other system which makes it easy to predict.
 
 
-Security	
+**Security**	
 
 When it comes to security we successfully implemented it. There are 3 ways to register as either a customer with an id, a customer without id or an instructor. Each user that logs in whether a customer, instructor, or admin are directed to their account settings. No one else can access a particular account except the user themselves.
 
 
-Business Intelligence Reports
+**Business Intelligence Reports**
 	
 The website implemented some of the reports which include a mixture of power bi dashboards and crystal reports.
 
 # Guidelines
 
 ![Static Badge](https://img.shields.io/badge/Visual%20Studio-2010%20or%20later-green) ![Static Badge](https://img.shields.io/badge/.Net%20Framework-4.5.2-blue)
+
+# Project Structure
+
+- This project is separated into 3 sub-systems:
+  - Unique Driving School Management System ([click here to visit](/../../../UniqueDrivingSchoolManagementSystem))
+  - Unique Driving School Reporting System ([click here to visit](/../../../UniqueDrivingSchoolReportingSystem))
+  - Unique Driving School Website ([Current project](/))
+- A User Story System was built for the aforementioned subsystems to keep track of the progress of the user stories and test cases during development  ([click here to visit](/../../../UserStoryApp)).
+
+# Config
+
+- Clone the project
+- To open the project solution just double click on [UniqueDrivingSchoolWebsite.sln](/UniqueDrivingSchoolWebsite.sln) 
+
+- (re)build application
+> (re)building the application will install the required ASP.NET packages from NuGet
+![Screenshot (4085)](https://github.com/LuckyMaley/UniqueDrivingSchoolReportingSystem/assets/58641501/302508b0-9f80-43d2-9d7e-454cc445c11f)
+
+
+- Database Setup
+> **NOTE:** If you want to change the connection string to a live or production-ready database just go to the [Web.config](/UniqueDrivingSchoolWebsite/Web.config) file and change the existing one to your database. Example of connection string below:
+
+ ```<add name="UniqueDrivingSchoolManagementSystem.My.MySettings.ist3bbConnectionString" connectionString="Data Source= DatabaseServerName; Integrated Security=true;Initial Catalog=UniqueDrivingSchoolDB; uid=YourUserName; Password=yourpassword; " providerName="System.Data.SqlClient" />``` 
+ 
+ > **NOTE:** You need to also right-click the project name on the solution explorer > click properties > then go to settings, and when a pop-up message appears, click "yes" to confirm the changed connection string.
+
+- A SQL query with the relevant database tables has already been created, you need to initialize it (**NOTE:** If you have already executed these SQL queries for the Unique Driving School Management System then you don't need to run them again as this system uses the same database). There are two SQL queries
+  - The first one creates a database. [Click here](/UniqueDrivingSchoolManagementSystem/SQLQueryCreateUniqueDrivingSchoolDB.sql) to go to the file called SQLQueryCreateUniqueDrivingSchoolDB.sql.
+  - The second uses the database you created in the previous point to initialize the database tables. [Click here](/UniqueDrivingSchoolManagementSystem/SQLQueryUniqueDrivingSchoolDB.sql) to go to the file called SQLQueryUniqueDrivingSchoolDB.sql.
+
+> **NOTE:** You need to ensure that the initial catalog in your connection string is the same as the database where these db tables are created or located.
+
+- You can now run and test the system.
+
+# Noticable improvements for future work
+
+- The system can be updated to use an API for database interactivity so users created on this system can also be accessible on the website.
+- The PowerBI reports can be implemented better using an API with javascript that does not rely on a plugin.
+- The user interface could be improved to be more intuitive and user-friendly
+
 
 # Screenshots
 
@@ -58,7 +98,7 @@ The website implemented some of the reports which include a mixture of power bi 
 
 ![ManagerReports](https://github.com/LuckyMaley/UniqueDrivingSchoolWebsite/assets/58641501/a12a6156-7140-4f33-b18a-963c7eb08f33)
 
-
+**([click here to visit](/../../../UniqueDrivingSchoolManagementSystem)) a related project**
 
 
 

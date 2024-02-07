@@ -98,7 +98,7 @@ The website implemented some of the reports which include a mixture of power bi 
 
 ![ManagerReports](https://github.com/LuckyMaley/UniqueDrivingSchoolWebsite/assets/58641501/a12a6156-7140-4f33-b18a-963c7eb08f33)
 
-**([click here to visit](/../../../UniqueDrivingSchoolManagementSystem)) a related project**
+**([click here ](/../../../UniqueDrivingSchoolManagementSystem)) to visit a related project**
 
 
 

@@ -43,7 +43,7 @@ A structured branching strategy must be followed to keep the codebase organized:
    - Example: `hotfix/critical-bug-in-production`
 
 ### Notes:
-- Use **kebab-case** (lowercase with hyphens) for branch names (e.g., `feature/view-lesspn-slots`).
+- Use **kebab-case** (lowercase with hyphens) for branch names (e.g., `feature/view-lesson-slots`).
 - Branch names should be **descriptive** but concise.
 - Avoid spaces, uppercase letters, or special characters.
 

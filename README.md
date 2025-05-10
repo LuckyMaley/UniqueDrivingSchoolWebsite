@@ -26,6 +26,59 @@ The website implemented some of the reports which include a mixture of power bi 
 
 ![Static Badge](https://img.shields.io/badge/Visual%20Studio-2010%20or%20later-green) ![Static Badge](https://img.shields.io/badge/.Net%20Framework-4.5.2-blue)
 
+## Branching Strategy
+
+A structured branching strategy must be followed to keep the codebase organized:
+
+- **main**: Stable, production-ready code.
+- **dev**: Ongoing development. Feature branches are merged here first
+
+- **feature/**: New features.
+  - Example: `feature/add-user-authentication`
+- **bugfix/**: Bug fixes.
+  - Example: `bugfix/fix-app-response`
+- **chore/**: Maintenance tasks, documentation,or configurations.
+  - Example: `chore/add-read-me`
+- **Hotfix branches**: Urgent fixes to `main`.
+   - Example: `hotfix/critical-bug-in-production`
+
+### Notes:
+- Use **kebab-case** (lowercase with hyphens) for branch names (e.g., `feature/view-lesspn-slots`).
+- Branch names should be **descriptive** but concise.
+- Avoid spaces, uppercase letters, or special characters.
+
+## Development Workflow
+
+1. **Create a New Branch**:
+   ```bash
+   git checkout -b feature/add-user-authentication
+   ```
+
+2. **Make Changes**:
+   ```bash
+   git add .
+   git commit -m "Implement user authentication feature"
+   ```
+
+3. **Push Your Branch**:
+   ```bash
+   git push origin feature/add-user-authentication
+   ```
+
+4. **Sync with the `dev` Branch**:
+   Before creating a merge request, ensure your branch is up-to-date with the latest changes from the `dev` branch:
+   ```bash
+   git pull origin dev
+   ```
+   If there are any merge conflicts, resolve them in your branch locally. Once resolved, commit the changes and push them back to your branch:
+   
+   ```bash
+   git push origin feature/add-user-authentication
+   ```
+
+5. **Create a Merge Request**:
+   - Open a pull request on GitHub targeting `dev` for code review.
+
 # Project Structure
 
 - This project is separated into 3 sub-systems:
